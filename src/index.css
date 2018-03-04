@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box; }
+
+:root {
+  --font-base: 30px;
+  --font-color-main: #FFFFFF;
+  --font-color-secundary: #E0D7F9;
+  --font-color-storm: #717283;
+  --moradul: #9A6DF7;
+  --slate: #7E61EC;
+  --majorelle: #6950E7;
+  --lucky: #2A2C4D;
+  --midnight: #21233E;
+  --mirage: #17182E;
+  --columbia: #9CDAFB;
+  --light-sky: #8ACEFA;
+  --maya: #78C1FA;
+  --danger: #EA645F;
+  --warning: #F6BE5F;
+  --success: #80AC54;
+  --awesome: #63D286;
+  --white: #ffffff;
+  --hint: #F8FAFB; }
+
+@font-face {
+  font-family: "CabifyCircularWeb";
+  src: url(/fonts/CabifyCircularWeb-Book.eot);
+  src: url(/fonts/CabifyCircularWeb-Book.eot?#iefix) format("embedded-opentype"), url(/fonts/CabifyCircularWeb-Book.woff) format("woff"), url(/fonts/CabifyCircularWeb-Book.ttf) format("truetype"), url(/fonts/CabifyCircularWeb-Book.svg) format("svg");
+  font-weight: 400;
+  font-style: normal;
+  -ms-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  -o-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  font-feature-settings: "1" 1, "0" 0, "1" 1; }
+@font-face {
+  font-family: "CabifyCircularWeb";
+  src: url(/fonts/CabifyCircularWeb-Bold.eot);
+  src: url(/fonts/CabifyCircularWeb-Bold.eot?#iefix) format("embedded-opentype"), url(/fonts/CabifyCircularWeb-Bold.woff) format("woff"), url(/fonts/CabifyCircularWeb-Bold.ttf) format("truetype"), url(/fonts/CabifyCircularWeb-Bold.svg) format("svg");
+  font-weight: 600;
+  font-style: normal;
+  -ms-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  -o-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  font-feature-settings: "1" 1, "0" 0, "1" 1; }
+@font-face {
+  font-family: "CabifyCircularWeb";
+  src: url(/fonts/CabifyCircularWeb-Light.eot);
+  src: url(/fonts/CabifyCircularWeb-Light.eot?#iefix) format("embedded-opentype"), url(/fonts/CabifyCircularWeb-Light.woff) format("woff"), url(/fonts/CabifyCircularWeb-Light.ttf) format("truetype"), url(/fonts/CabifyCircularWeb-Light.svg) format("svg");
+  font-weight: 300;
+  font-style: normal;
+  -ms-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  -o-font-feature-settings: "1" 1,"0" 0,"1" 1;
+  font-feature-settings: "1" 1, "0" 0, "1" 1; }
+body {
+  background-color: #eee;
+  font: 400 16px/24px 'CabifyCircularWeb';
+  position: relative;
+
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
