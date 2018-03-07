@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Sample from './sample';
 import Control from './control';
 import Legend from './legend';
-import {colors, legends} from './colors';
+import {colors} from './colors';
 
 import './App.css';
 
@@ -34,13 +34,57 @@ class App extends Component {
   }
 
   render() {
-    console.log(getColor('Positive Secondary'));
-
     return (
       <div>
         <ul className="grid">
           <Sample color={getColor('Positive Primary')} background={getColor('Moradul')}/>
           <Sample color={getColor('Positive Secondary')} background={getColor('Moradul')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Moradul')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Moradul')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Moradul Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Moradul Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Moradul Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Moradul Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Moradul Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Moradul Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Moradul Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Moradul Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Martinique')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Martinique')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Martinique')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Martinique')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Martinique Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Martinique Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Martinique Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Martinique Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Martinique Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Martinique Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Martinique Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Martinique Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Pink')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Pink')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Pink')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Pink')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Pink Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Pink Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Pink Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Pink Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Pink Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Pink Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Pink Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Pink Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Blue Love')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Blue Love')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Blue Love')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Blue Love')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Blue Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Blue Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Blue Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Blue Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Blue Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Blue Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Blue Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Blue Dark')}/>
 
           {this.state.items.map((sample, index) => {
             return (
