@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './control.css';
+
 class Control extends Component {
   state = {
     color: '',
@@ -20,19 +22,23 @@ class Control extends Component {
 
   render() {
 
-    return (<div>
+    return (
+    <div className='addItems'>
       <label className="background">
         <span className='is-block'>Background:</span>
-        <input onChange={this.onChange} name="background" placeholder="rbg" className='input'/>
+        <input onChange={this.onChange} name="background" placeholder="Enter color" className='input align-right'/>
       </label>
-      <label className="foreground">
+      <label className="foreground align-right">
         <span className='is-block'>Text color:</span>
-        <input onChange={this.onChange} name="color" placeholder="rbg" className='input'/>
+        <input onChange={this.onChange} name="color" placeholder="Enter color" className='input align-left'/>
       </label>
-      <button onClick={(e) => {
-        this.props.onClick(this.state);
-      }}>Add</button>
-    </div>);
+      <div className="btn-add-holder">
+        <button className="button button-main button-rounded" onClick={(e) => {
+          this.props.onClick(this.state);
+        }}>Add</button>
+      </div>
+    </div>
+    );
   }
 }
 

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Sample from './sample';
 import Control from './control';
-import colors from './colors';
+import Legend from './legend';
+import {colors, legends} from './colors';
 
 import './App.css';
+
+const getColor = (name) => {
+  return colors.filter((color) => color.name === name)[0];
+}
 
 class App extends Component {
   state = {
@@ -29,46 +34,29 @@ class App extends Component {
   }
 
   render() {
+    console.log(getColor('Positive Secondary'));
+
     return (
       <div>
-      <ul className="grid">
-        <Sample color={colors.midnight} background={colors.white}/>
-        <Sample color={colors.fontColorStorm} background={colors.white}/>
-        <Sample color={colors.midnight} background={colors.hint}/>
-        <Sample color={colors.fontColorStorm} background={colors.hint}/>
-        <Sample color={colors.fontColorMain} background={colors.moradul}/>
-        <Sample color={colors.fontColorSecundary} background={colors.moradul}/>
-        <Sample color={colors.fontColorMain} background={colors.slate}/>
-        <Sample color={colors.fontColorSecundary} background={colors.slate}/>
-        <Sample color={colors.fontColorMain} background={colors.majorelle}/>
-        <Sample color={colors.fontColorSecundary} background={colors.majorelle}/>
-        <Sample color={colors.fontColorMain} background={colors.lucky}/>
-        <Sample color={colors.fontColorSecundary} background={colors.lucky}/>
-        <Sample color={colors.fontColorMain} background={colors.midnight}/>
-        <Sample color={colors.fontColorSecundary} background={colors.midnight}/>
-        <Sample color={colors.fontColorMain} background={colors.mirage}/>
-        <Sample color={colors.fontColorSecundary} background={colors.mirage}/>
-        <Sample color={colors.fontColorMain} background={colors.columbia}/>
-        <Sample color={colors.fontColorSecundary} background={colors.columbia}/>
-        <Sample color={colors.fontColorMain} background={colors.lightSky}/>
-        <Sample color={colors.fontColorSecundary} background={colors.lightSky}/>
-        <Sample color={colors.fontColorMain} background={colors.maya}/>
-        <Sample color={colors.fontColorSecundary} background={colors.maya}/>
+        <ul className="grid">
+          <Sample color={getColor('Positive Primary')} background={getColor('Moradul')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Moradul')}/>
 
-        {this.state.items.map((sample, index) => {
-          return (
-            <Sample
-              onClick={this.removeSample}
-              key={index}
-              index={index}
-              color={sample.color}
-              background={sample.background}
-            />
-          );
-        })}
+          {this.state.items.map((sample, index) => {
+            return (
+              <Sample
+                onClick={this.removeSample}
+                key={index}
+                index={index}
+                color={sample.color}
+                background={sample.background}
+              />
+            );
+          })}
 
-      </ul>
-      <Control onClick={this.onClick}/>
+        </ul>
+        <Legend/>
+        <Control onClick={this.onClick}/>
       </div>
 
     );

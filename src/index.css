@@ -53,7 +53,6 @@ body {
   background-color: #eee;
   font: 400 16px/24px 'CabifyCircularWeb';
   position: relative;
-
   margin: 0;
   padding: 0; }
 
@@ -62,3 +61,6 @@ ul {
   margin: 0;
   padding: 0; }
 
+h3, h4, p {
+  margin: 0;
+}

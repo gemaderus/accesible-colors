@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import tinycolor from 'tinycolor2';
 
 import './sample.css';
-import colors from './colors';
+import {colors, legends} from './colors';
 
 const luminanace = (r, g, b) => {
     let a = [r, g, b].map(function (v) {
@@ -24,15 +24,14 @@ const contrast = (rgb1, rgb2) => {
 
 const colorRatioBased = (ratio) => {
   let background;
-
   if(ratio <= 3) {
-    background = colors.danger;
+    background = legends.danger;
   } else if(ratio > 3 && ratio <= 4.5) {
-    background =  colors.warning;
+    background =  legends.warning;
   } else if (ratio >=4.5 && ratio < 8){
-    background =  colors.success;
+    background = legends.success;
   } else {
-    background =  colors.awesome;
+    background = legends.awesome;
   }
 
   return {
@@ -40,24 +39,57 @@ const colorRatioBased = (ratio) => {
   }
 }
 
+const hslToString = ({h, s, l, a}) => {
+  return `${h}, ${Math.round(s*100)}%, ${Math.round(l*100)}%, ${a}`;
+}
 
 class Sample extends Component {
   render () {
     const style = {
-      backgroundColor: this.props.background,
-      color: this.props.color
+      backgroundColor: this.props.background.code,
+      color: this.props.color.code
     }
 
-    const bg = tinycolor(this.props.background).toRgb();
-    const c = tinycolor(this.props.color).toRgb();
+    console.log(tinycolor.readability(this.props.background.code, this.props.color.code));
+    console.log(tinycolor(this.props.color.code).getLuminance());
+
+    const colorDetail = tinycolor(this.props.background.code);
+    const hsla = colorDetail.toHsl();
+    const bg = colorDetail.toRgb();
+    const c = tinycolor(this.props.color.code).toRgb();
+    const hex8 = colorDetail.toHex8();
+
+    const hex8Main = hex8.slice(0, 6);
+    const hex8Trans = hex8.slice(6, 8);
     const ratio = contrast([c.r, c.g, c.b], [bg.r, bg.g, bg.b]);
 
     return (
       <li onClick={e => {
         this.props.onClick && this.props.onClick(this.props.index);
-      }} className="item item1" style={style}>
-        <span className="item-center">Aa</span>
-        <span className="rating" style={colorRatioBased(ratio)}>{ratio}</span>
+      }} className='card'>
+        <div className="card-header" style={style}>
+          <span className="item-center">Aa</span>
+          <span className="rating" style={colorRatioBased(ratio)}>{ratio}</span>
+        </div>
+        <div className="card-content">
+          <p className='color-gray-light'>Text <strong>{this.props.color.name}</strong></p>
+          <div className="card-bg">
+            <h3 className='card-bg-name'>{this.props.background.name}</h3>
+            <ul className="card-bg-detail">
+              <li>
+                <h4 className='color-gray-light'>HEX</h4>
+                <span className='uppercase'>{hex8Main}</span>
+                <span className='uppercase color-gray-light'>{hex8Trans}</span>
+              </li>
+              <li>
+                <h4 className='color-gray-light'>HSLA</h4>
+                <span>
+                  <span>{hslToString(hsla)}</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </li>
     );
   }
