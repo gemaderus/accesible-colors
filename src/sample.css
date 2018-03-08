@@ -59,7 +59,8 @@
   font-size: 12px;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 2px; }
 
 .uppercase {
   text-transform: uppercase;

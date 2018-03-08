@@ -64,7 +64,7 @@ class Sample extends Component {
             <ul className="card-bg-detail">
               <li>
                 <h4 className='color-gray-light'>HEX</h4>
-                <span className='uppercase'>{hex8Main}</span>
+                <span className='uppercase'>#{hex8Main}</span>
                 <span className='uppercase color-gray-light'>{hex8Trans}</span>
               </li>
               <li>
