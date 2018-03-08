@@ -9,7 +9,7 @@ const legends = {
 const colors = [
 { code: 'hsl(238, 32%, 19%)', name: 'Positive Primary' },
 { code: 'hsla(238, 32%, 19%, .64)', name: 'Positive Secondary' },
-{ code: 'hsl(238, 32%, 19%)', name: 'Negative Primary' },
+{ code: 'hsl(100, 100%, 100%)', name: 'Negative Primary' },
 { code: 'hsla(100, 100%, 100%, .72)', name: 'Negative Secondary' },
 { code: 'hsl(257, 87%, 66%)', name: 'Moradul' },
 { code: 'hsl(260, 90%, 70%)', name: 'Moradul Light' },

@@ -16,6 +16,7 @@ class App extends Component {
   }
 
   onClick = (sample) => {
+    console.log(sample);
     this.setState(state => {
       return {
         ...state,
@@ -85,6 +86,38 @@ class App extends Component {
           <Sample color={getColor('Positive Secondary')} background={getColor('Blue Dark')}/>
           <Sample color={getColor('Negative Primary')} background={getColor('Blue Dark')}/>
           <Sample color={getColor('Negative Secondary')} background={getColor('Blue Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Mac And Cheese')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Mac And Cheese')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Mac And Cheese')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Mac And Cheese')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Mac And Cheese Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Mac And Cheese Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Mac And Cheese Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Mac And Cheese Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Mac And Cheese Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Mac And Cheese Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Mac And Cheese Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Mac And Cheese Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Shamrock')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Shamrock')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Shamrock')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Shamrock')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Shamrock Light')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Shamrock Light')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Shamrock Light')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Shamrock Light')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Shamrock Dark')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Shamrock Dark')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Shamrock Dark')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Shamrock Dark')}/>
+          <Sample color={getColor('Positive Primary')} background={getColor('Selago')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('Selago')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('Selago')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('Selago')}/>
+           <Sample color={getColor('Positive Primary')} background={getColor('White')}/>
+          <Sample color={getColor('Positive Secondary')} background={getColor('White')}/>
+          <Sample color={getColor('Negative Primary')} background={getColor('White')}/>
+          <Sample color={getColor('Negative Secondary')} background={getColor('White')}/>
 
           {this.state.items.map((sample, index) => {
             return (

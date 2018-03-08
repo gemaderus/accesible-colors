@@ -10,7 +10,9 @@ class Control extends Component {
 
   onChange = (e) => {
     const name = e.target.name;
+    console.log(name);
     const value = e.target.value;
+    console.log(value);
 
     this.setState(state => {
       return {
