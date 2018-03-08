@@ -15,15 +15,16 @@ class App extends Component {
     items: []
   }
 
-  onClick = (sample) => {
-    console.log(sample);
+  onClick = sample => {
+    const newSample = { background: { name: '', code: sample.background }, color: { name: '', code: sample.color } };
+
     this.setState(state => {
       return {
         ...state,
-        items: [ ...state.items, sample ]
-      }
-    })
-  }
+        items: [...state.items, newSample],
+      };
+    });
+  };
 
   removeSample = (index) => {
     this.setState(state => {

@@ -4,15 +4,13 @@ import './control.css';
 
 class Control extends Component {
   state = {
-    color: '',
-    background: ''
+    background: '',
+    color: ''
   }
 
   onChange = (e) => {
     const name = e.target.name;
-    console.log(name);
     const value = e.target.value;
-    console.log(value);
 
     this.setState(state => {
       return {

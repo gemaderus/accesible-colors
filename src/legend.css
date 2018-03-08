@@ -2,13 +2,12 @@
   font-size: 13px;
   max-width: 1200px;
   margin: 0 auto 50px;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  line-height: 1;
   margin-bottom: 10px;
 }
 
@@ -16,8 +15,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
+  margin-right: 8px;
+  flex-shrink: 0;
 }
 
 .danger{
