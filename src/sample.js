@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import tinycolor from 'tinycolor2';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import './sample.css';
 import {legends} from './colors';
@@ -35,6 +36,13 @@ const hslToString = ({h, s, l, a}) => {
 }
 
 class Sample extends Component {
+  state = {value: 'some\ntext', copied: false};
+  onCopy = () => {
+    this.setState({copied: true});
+  };
+
+
+
   render () {
     const style = {
       backgroundColor: this.props.background.code,
@@ -43,9 +51,9 @@ class Sample extends Component {
 
     const colorDetail = tinycolor(this.props.background.code);
     const hsla = colorDetail.toHsl();
-    const hex8 = colorDetail.toHex8();
-    const hex8Main = hex8.slice(0, 6);
-    const hex8Trans = hex8.slice(6, 8);
+    const hex8 = colorDetail.toHex8String();
+    const hex8Main = hex8.slice(0, 7);
+    const hex8Trans = hex8.slice(7, 9);
     const perceived = getRGBPerceived(this.props.color.code, this.props.background.code);
     const ratio = tinycolor.readability(this.props.background.code, perceived).toFixed(1);
 
@@ -63,15 +71,22 @@ class Sample extends Component {
             <h3 className='card-bg-name'>{this.props.background.name}</h3>
             <ul className="card-bg-detail">
               <li>
-                <h4 className='color-gray-light'>HEX</h4>
-                <span className='uppercase'>#{hex8Main}</span>
-                <span className='uppercase color-gray-light'>{hex8Trans}</span>
+                <div className="flex space-between">
+                  <h4 className='color-gray-light'>HEX</h4>
+                  {this.state.copied ? <span style={{color: '#15D67E'}}>Copied!</span> : null}
+                </div>
+                <CopyToClipboard text={hex8Main} onCopy={() => this.setState({copied: true})}>
+                  <span className='uppercase'>{hex8Main}<span className='uppercase color-gray-light'>{hex8Trans}</span></span>
+                </CopyToClipboard>
               </li>
               <li>
+              <div className="flex space-between">
                 <h4 className='color-gray-light'>HSLA</h4>
-                <span>
+                {this.state.copied ? <span style={{color: '#15D67E'}}>Copied!</span> : null}
+                </div>
+                <CopyToClipboard text={hslToString(hsla)} onCopy={() => this.setState({copied: true})}>
                   <span>{hslToString(hsla)}</span>
-                </span>
+                </CopyToClipboard>
               </li>
             </ul>
           </div>

@@ -65,3 +65,16 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+.message {
+  padding: 10px;
+  background-color: green;
+}
+
+.flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
