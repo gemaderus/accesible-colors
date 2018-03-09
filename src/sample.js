@@ -71,10 +71,7 @@ class Sample extends Component {
             <h3 className='card-bg-name'>{this.props.background.name}</h3>
             <ul className="card-bg-detail">
               <li>
-                <div className="flex space-between">
-                  <h4 className='color-gray-light'>HEX</h4>
-                  {this.state.copied ? <span style={{color: '#15D67E'}}>Copied!</span> : null}
-                </div>
+                <h4 className='color-gray-light'>HEX</h4>
                 <CopyToClipboard text={hex8Main} onCopy={() => this.setState({copied: true})}>
                   <span className='uppercase'>{hex8Main}<span className='uppercase color-gray-light'>{hex8Trans}</span></span>
                 </CopyToClipboard>
