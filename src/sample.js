@@ -35,13 +35,37 @@ const hslToString = ({h, s, l, a}) => {
   return `${Math.round(h)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%, ${a}`;
 }
 
+const HIDE_INTERVAL = 1000;
+
 class Sample extends Component {
   state = {value: 'some\ntext', copied: false};
-  onCopy = () => {
-    this.setState({copied: true});
-  };
 
+  constructor (props) {
+    super(props);
 
+    this.interval = null;
+  }
+
+  startInterval = () => {
+    clearTimeout(this.interval);
+    this.interval = setTimeout(() => {
+      this.setState((state) => {
+        return {
+          ...state,
+          copied: false
+        }
+      });
+    }, HIDE_INTERVAL);
+  }
+
+  copyHandler = () => {
+    this.setState((state) => {
+      return {
+        ...state,
+        copied: true
+      }
+    }, this.startInterval);
+  }
 
   render () {
     const style = {
@@ -72,7 +96,7 @@ class Sample extends Component {
             <ul className="card-bg-detail">
               <li>
                 <h4 className='color-gray-light'>HEX</h4>
-                <CopyToClipboard text={hex8Main} onCopy={() => this.setState({copied: true})}>
+                <CopyToClipboard text={`${hex8Main}${hex8Trans}`} onCopy={this.copyHandler}>
                   <span className='uppercase'>{hex8Main}<span className='uppercase color-gray-light'>{hex8Trans}</span></span>
                 </CopyToClipboard>
               </li>
@@ -81,7 +105,7 @@ class Sample extends Component {
                 <h4 className='color-gray-light'>HSLA</h4>
                 {this.state.copied ? <span style={{color: '#15D67E'}}>Copied!</span> : null}
                 </div>
-                <CopyToClipboard text={hslToString(hsla)} onCopy={() => this.setState({copied: true})}>
+                <CopyToClipboard text={hslToString(hsla)} onCopy={this.copyHandler}>
                   <span>{hslToString(hsla)}</span>
                 </CopyToClipboard>
               </li>
